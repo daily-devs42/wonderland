@@ -7,7 +7,7 @@
         <label for="fullName">Name</label>
         <input type="text" name="fullName" id="fullName" value="{{ old('fullName') || '' }}"}>
         @inputError('fullName')
-          {{ messages.join(', ') }}
+          {{ $messages.join(', ') }}
         @end
       </div>
 
@@ -15,7 +15,7 @@
         <label for="email">Email</label>
         <input type="text" name="email" id="email" value="{{ old('email') || '' }}"}>
         @inputError('email')
-          {{ messages.join(', ') }}
+          {{ $messages.join(', ') }}
         @end
       </div>
 
@@ -23,7 +23,7 @@
         <label for="password">Password</label>
         <input type="password" name="password" id="password" value="{{ old('password') || '' }}"}>
         @inputError('password')
-          {{ messages.join(', ') }}
+          {{ $messages.join(', ') }}
         @end
       </div>
 
