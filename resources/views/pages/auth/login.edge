@@ -8,7 +8,7 @@
         <label for="email">Email</label>
         <input type="text" name="email" id="email" value="{{ old('email') || '' }}"}>
         @inputError('email')
-          {{ messages.join(', ') }}
+          {{ $messages.join(', ') }}
         @end
       </div>
 
@@ -16,7 +16,7 @@
         <label for="password">Password</label>
         <input type="password" name="password" id="password" value="{{ old('password') || '' }}"}>
         @inputError('password')
-          {{ messages.join(', ') }}
+          {{ $messages.join(', ') }}
         @end
       </div>
       <button type="submit">Login</button>
@@ -24,5 +24,7 @@
     @error('E_INVALID_CREDENTIALS')
       {{ $message }}
     @end
+    <hr>
+    <a href="{{ route('home') }}">Back</a>
   @endslot
 @end

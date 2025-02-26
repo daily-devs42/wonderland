@@ -10,12 +10,10 @@
 const RegisterController = () => import('#controllers/auth/register_controller')
 const LoginController = () => import('#controllers/auth/login_controller')
 const LogoutController = () => import('#controllers/auth/logout_controller')
+const HomeController = () => import('#controllers/home_controller')
 import router from '@adonisjs/core/services/router'
 
-router.get('/', async (ctx) => {
-  await ctx.auth.check()
-  return ctx.view.render('pages/home')
-})
+router.get('/', [HomeController, 'handle']).as('home')
 
 router
   .group(() => {
